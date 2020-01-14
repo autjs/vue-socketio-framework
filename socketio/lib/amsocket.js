@@ -6,7 +6,7 @@ class AmScoket {
 		this.ext = socketioext
 		this.skt = null
 		this._evts = {}
-		this.message = 'ams'
+		this.message = 'onmessage'
 	}
 
 	link(url) {
@@ -21,9 +21,9 @@ class AmScoket {
 	}
 
 	send(v) {
-		this.log('waitign .. send data')
+		this.log('waiting send ...')
 		if(this.skt) {
-			this.log('send data to server')
+			this.log('send data to server', v)
 			this.skt.emit(this.message, v)
 		}
 	}
@@ -44,7 +44,6 @@ class AmScoket {
 	}
 
 	_onmessage(v) {
-		this.log('receive: ', v)
 		this._emit(this.message, v)
 	}
 

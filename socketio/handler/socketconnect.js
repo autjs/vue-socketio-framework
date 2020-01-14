@@ -1,3 +1,7 @@
+// import ams from '../index.js'
 export default function() {
-	this.send('hi, kuolie.')
+	this.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+	this.log('connect ok.');
+	
+	// ams.send('hi, kuolie.')
 }
